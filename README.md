@@ -14,7 +14,7 @@
 * Switch directory:  `$ cd react-base`
 * Install dependencies: `$ npm install`
 * Fire the development server: `$ npm run watch`
-* Open the URL: `$ open http://localhost:8080/`
+* Open the URL: `$ open http://localhost:1309/`
 
 ## License
 
