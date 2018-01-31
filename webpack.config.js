@@ -8,10 +8,10 @@ const isProduction = process.env.NODE_ENV === 'production';
 module.exports = {
   context: __dirname,
 
-  entry: [
-    'react-hot-loader/patch',
-    './src/App.jsx'
-  ],
+  entry: {
+    app: [ './src/App.jsx', 'react-hot-loader/patch' ],
+    vendor: [ "react", "react-dom" ]
+  },
 
   devServer: {
     contentBase: path.join(__dirname, 'assets'),
@@ -43,7 +43,7 @@ module.exports = {
   output: {
     path: __dirname + '/dist',
     publicPath: '/',
-    filename: 'bundle.js'
+    filename: '[name].js'
   },
 
   devtool: isProduction ? 'source-map' : 'cheap-module-eval-source-map',
@@ -55,5 +55,5 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({ title: 'React Base', template: 'src/index.ejs', inject : 'body'  })
   ]
-  
+
 };
